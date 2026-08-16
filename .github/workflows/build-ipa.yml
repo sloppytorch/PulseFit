@@ -18,10 +18,10 @@ jobs:
 
       - name: Unpack project archive
         run: |
-          openssl base64 -d -in project.tgz.b64 -out project.tgz
+          python3 -c "import base64; open('project.tgz','wb').write(base64.b64decode(open('project.tgz.b64').read()))"
           mkdir app && tar -xzf project.tgz -C app
-          echo "--- archive contents ---"
-          tar -tzf project.tgz | head -10
+          test -f app/scripts/build_ipa.sh
+          echo "archive files: $(tar -tzf project.tgz | wc -l | tr -d ' ')"
 
       - name: Run unit tests
         continue-on-error: true
