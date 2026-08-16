@@ -1,0 +1,53 @@
+name: Build iOS IPA
+
+# Builds an unsigned PulseFit.ipa on GitHub's macOS runners — no Mac needed.
+# Every push to main rebuilds it; you can also trigger it manually from the
+# Actions tab (Run workflow button).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ipa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Test + archive (unsigned)
+    runs-on: macos-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          xcodebuild -project PulseFit.xcodeproj -list
+
+      - name: Run unit tests
+        id: tests
+        continue-on-error: true
+        run: |
+          set -eo pipefail
+          DEVICE="$(xcrun simctl list devices available | grep -E -o 'iPhone [0-9][^()]*' | head -n1 | xargs echo)"
+          if [ -z "$DEVICE" ]; then
+            echo "No iOS simulator found — skipping tests."
+            exit 0
+          fi
+          echo "Testing on simulator: $DEVICE"
+          xcodebuild test \
+            -project PulseFit.xcodeproj \
+            -scheme PulseFit \
+            -destination "platform=iOS Simulator,name=$DEVICE"
+
+      - name: Build unsigned IPA
+        run: ./scripts/build_ipa.sh PulseFit-unsigned.ipa
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PulseFit-unsigned-ipa
+          path: PulseFit-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 30

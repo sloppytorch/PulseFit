@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	objectVersion = 56;
+	classes = {
+	};
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0000000000000000000001 /* PulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000001 /* PulseApp.swift */; };
+		AA0000000000000000000002 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000002 /* Workout.swift */; };
+		AA0000000000000000000003 /* TimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000003 /* TimerModels.swift */; };
+		AA0000000000000000000004 /* TimerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000004 /* TimerEngine.swift */; };
+		AA0000000000000000000005 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000005 /* Stats.swift */; };
+		AA0000000000000000000006 /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000006 /* WorkoutStore.swift */; };
+		AA0000000000000000000007 /* TemplateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000007 /* TemplateStore.swift */; };
+		AA0000000000000000000008 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000008 /* SoundPlayer.swift */; };
+		AA0000000000000000000009 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000009 /* Haptics.swift */; };
+		AA000000000000000000000A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000000000000000000000A /* Theme.swift */; };
+		AA000000000000000000000B /* TimerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000000000000000000000B /* TimerHomeView.swift */; };
+		AA000000000000000000000C /* TemplateEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000000000000000000000C /* TemplateEditorView.swift */; };
+		AA000000000000000000000D /* IntervalRunnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000000000000000000000D /* IntervalRunnerView.swift */; };
+		AA000000000000000000000E /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000000000000000000000E /* WorkoutListView.swift */; };
+		AA000000000000000000000F /* WorkoutFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000000000000000000000F /* WorkoutFormView.swift */; };
+		AA0000000000000000000010 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000010 /* WorkoutDetailView.swift */; };
+		AA0000000000000000000011 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000011 /* StatsView.swift */; };
+		AA0000000000000000000012 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0000000000000000000012 /* SettingsView.swift */; };
+		AA0000000000000000000019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0000000000000000000002 /* Assets.xcassets */; };
+		AC0000000000000000000001 /* TimerEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0000000000000000000001 /* TimerEngineTests.swift */; };
+		AC0000000000000000000002 /* StatsLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0000000000000000000002 /* StatsLogicTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB0000000000000000000001 /* PulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseApp.swift; sourceTree = "<group>"; };
+		AB0000000000000000000002 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		AB0000000000000000000003 /* TimerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModels.swift; sourceTree = "<group>"; };
+		AB0000000000000000000004 /* TimerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEngine.swift; sourceTree = "<group>"; };
+		AB0000000000000000000005 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		AB0000000000000000000006 /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
+		AB0000000000000000000007 /* TemplateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateStore.swift; sourceTree = "<group>"; };
+		AB0000000000000000000008 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		AB0000000000000000000009 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		AB000000000000000000000A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		AB000000000000000000000B /* TimerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHomeView.swift; sourceTree = "<group>"; };
+		AB000000000000000000000C /* TemplateEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEditorView.swift; sourceTree = "<group>"; };
+		AB000000000000000000000D /* IntervalRunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalRunnerView.swift; sourceTree = "<group>"; };
+		AB000000000000000000000E /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
+		AB000000000000000000000F /* WorkoutFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutFormView.swift; sourceTree = "<group>"; };
+		AB0000000000000000000010 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		AB0000000000000000000011 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		AB0000000000000000000012 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AD0000000000000000000001 /* TimerEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEngineTests.swift; sourceTree = "<group>"; };
+		AD0000000000000000000002 /* StatsLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsLogicTests.swift; sourceTree = "<group>"; };
+		AE0000000000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE0000000000000000000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE0000000000000000000003 /* PulseFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE0000000000000000000004 /* PulseFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA0000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA0000000000000000000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF0000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				AF0000000000000000000002 /* PulseFit */,
+				AF000000000000000000000B /* PulseFitTests */,
+				AF000000000000000000000C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF0000000000000000000002 /* PulseFit */ = {
+			isa = PBXGroup;
+			children = (
+				AB0000000000000000000001 /* PulseApp.swift */,
+				AF0000000000000000000003 /* Models */,
+				AF0000000000000000000004 /* Store */,
+				AF0000000000000000000005 /* Audio */,
+				AF0000000000000000000006 /* Support */,
+				AF0000000000000000000007 /* Timer */,
+				AF0000000000000000000008 /* Log */,
+				AF0000000000000000000009 /* Stats */,
+				AF000000000000000000000A /* Settings */,
+				AE0000000000000000000002 /* Assets.xcassets */,
+				AE0000000000000000000001 /* Info.plist */,
+			);
+			path = PulseFit;
+			sourceTree = "<group>";
+		};
+		AF0000000000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB0000000000000000000002 /* Workout.swift */,
+				AB0000000000000000000003 /* TimerModels.swift */,
+				AB0000000000000000000004 /* TimerEngine.swift */,
+				AB0000000000000000000005 /* Stats.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF0000000000000000000004 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				AB0000000000000000000006 /* WorkoutStore.swift */,
+				AB0000000000000000000007 /* TemplateStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		AF0000000000000000000005 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				AB0000000000000000000008 /* SoundPlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		AF0000000000000000000006 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AB0000000000000000000009 /* Haptics.swift */,
+				AB000000000000000000000A /* Theme.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		AF0000000000000000000007 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				AB000000000000000000000B /* TimerHomeView.swift */,
+				AB000000000000000000000C /* TemplateEditorView.swift */,
+				AB000000000000000000000D /* IntervalRunnerView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		AF0000000000000000000008 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				AB000000000000000000000E /* WorkoutListView.swift */,
+				AB000000000000000000000F /* WorkoutFormView.swift */,
+				AB0000000000000000000010 /* WorkoutDetailView.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		AF0000000000000000000009 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				AB0000000000000000000011 /* StatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		AF000000000000000000000A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AB0000000000000000000012 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		AF000000000000000000000B /* PulseFitTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD0000000000000000000001 /* TimerEngineTests.swift */,
+				AD0000000000000000000002 /* StatsLogicTests.swift */,
+			);
+			path = PulseFitTests;
+			sourceTree = "<group>";
+		};
+		AF000000000000000000000C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE0000000000000000000003 /* PulseFit.app */,
+				AE0000000000000000000004 /* PulseFitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB0000000000000000000001 /* PulseFit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD0000000000000000000002 /* Build configuration list for PBXNativeTarget "PulseFit" */;
+			buildPhases = (
+				BA0000000000000000000001 /* Sources */,
+				BA0000000000000000000002 /* Frameworks */,
+				BA0000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PulseFit;
+			productName = PulseFit;
+			productReference = AE0000000000000000000003 /* PulseFit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB0000000000000000000002 /* PulseFitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD0000000000000000000000003 /* Build configuration list for PBXNativeTarget "PulseFitTests" */;
+			buildPhases = (
+				BA0000000000000000000004 /* Sources */,
+				BA0000000000000000000005 /* Frameworks */,
+				BA0000000000000000000006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF0000000000000000000002 /* PBXTargetDependency */,
+			);
+			name = PulseFitTests;
+			productName = PulseFitTests;
+			productReference = AE0000000000000000000004 /* PulseFitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC0000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					BB0000000000000000000001 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					BB0000000000000000000002 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = BB0000000000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = BD0000000000000000000001 /* Build configuration list for PBXProject "PulseFit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF0000000000000000000001;
+			productRefGroup = AF000000000000000000000C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB0000000000000000000001 /* PulseFit */,
+				BB0000000000000000000002 /* PulseFitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA0000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000019 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA0000000000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA0000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000001 /* PulseApp.swift in Sources */,
+				AA0000000000000000000002 /* Workout.swift in Sources */,
+				AA0000000000000000000003 /* TimerModels.swift in Sources */,
+				AA0000000000000000000004 /* TimerEngine.swift in Sources */,
+				AA0000000000000000000005 /* Stats.swift in Sources */,
+				AA0000000000000000000006 /* WorkoutStore.swift in Sources */,
+				AA0000000000000000000007 /* TemplateStore.swift in Sources */,
+				AA0000000000000000000008 /* SoundPlayer.swift in Sources */,
+				AA0000000000000000000009 /* Haptics.swift in Sources */,
+				AA000000000000000000000A /* Theme.swift in Sources */,
+				AA000000000000000000000B /* TimerHomeView.swift in Sources */,
+				AA000000000000000000000C /* TemplateEditorView.swift in Sources */,
+				AA000000000000000000000D /* IntervalRunnerView.swift in Sources */,
+				AA000000000000000000000E /* WorkoutListView.swift in Sources */,
+				AA000000000000000000000F /* WorkoutFormView.swift in Sources */,
+				AA0000000000000000000010 /* WorkoutDetailView.swift in Sources */,
+				AA0000000000000000000011 /* StatsView.swift in Sources */,
+				AA0000000000000000000012 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA0000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC0000000000000000000001 /* TimerEngineTests.swift in Sources */,
+				AC0000000000000000000002 /* StatsLogicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		BF0000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC0000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB0000000000000000000001;
+			remoteInfo = PulseFit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		BF0000000000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB0000000000000000000002 /* PulseFitTests */;
+			targetProxy = BF0000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BE0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_LITERAL_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_MATCHES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+			};
+			name = Debug;
+		};
+		BE0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_LITERAL_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_MATCHES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE0000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PulseFit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pulsefit.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE0000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PulseFit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pulsefit.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BE0000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pulsefit.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseFit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PulseFit";
+			};
+			name = Debug;
+		};
+		BE0000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pulsefit.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseFit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PulseFit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD0000000000000000000001 /* Build configuration list for PBXProject "PulseFit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE0000000000000000000001 /* Debug */,
+				BE0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD0000000000000000000002 /* Build configuration list for PBXNativeTarget "PulseFit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE0000000000000000000003 /* Debug */,
+				BE0000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD0000000000000000000003 /* Build configuration list for PBXNativeTarget "PulseFitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE0000000000000000000005 /* Debug */,
+				BE0000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC0000000000000000000001 /* Project object */;
+}
