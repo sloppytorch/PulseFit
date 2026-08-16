@@ -5,7 +5,7 @@ name: Build iOS IPA
 # Actions tab (Run workflow button).
 on:
   push:
-    branches: [main]
+    branches: [main, pulsefit]
   workflow_dispatch:
 
 concurrency:
