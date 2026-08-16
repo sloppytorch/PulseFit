@@ -24,6 +24,15 @@ enum Units: String, CaseIterable, Identifiable {
 // MARK: - Settings keys
 
 enum SettingsKeys {
+    /// Defaults-backed keys; the enum makes leading-dot shorthand resolve.
+    enum Key: String {
+        case soundEnabled = "settings.soundEnabled"
+        case voiceEnabled = "settings.voiceEnabled"
+        case hapticsEnabled = "settings.hapticsEnabled"
+        case backgroundTimer = "settings.backgroundTimer"
+        case phaseAlerts = "settings.phaseAlerts"
+    }
+
     static let units = "settings.units"
     static let soundEnabled = "settings.soundEnabled"
     static let voiceEnabled = "settings.voiceEnabled"
@@ -33,8 +42,8 @@ enum SettingsKeys {
     static let weeklyGoal = "settings.weeklyGoal"
 
     /// `@AppStorage`-style reads where "never set" must default to true.
-    static func defaultedBool(_ key: String) -> Bool {
-        UserDefaults.standard.object(forKey: key) == nil ? true : UserDefaults.standard.bool(forKey: key)
+    static func defaultedBool(_ key: Key) -> Bool {
+        UserDefaults.standard.object(forKey: key.rawValue) == nil ? true : UserDefaults.standard.bool(forKey: key.rawValue)
     }
 
     static var currentUnits: Units {

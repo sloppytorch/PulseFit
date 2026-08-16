@@ -58,10 +58,12 @@ struct StatsView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text("Weekly Goal")
                     .font(.headline)
-                if sessions >= goal {
-                    Text("Goal crushed — keep it rolling! 🎉")
-                } else {
-                    Text("\(goal - sessions) more session\((goal - sessions) == 1 ? "" : "s") to hit your goal.")
+                Group {
+                    if sessions >= goal {
+                        Text("Goal crushed — keep it rolling! 🎉")
+                    } else {
+                        Text("\(goal - sessions) more session\((goal - sessions) == 1 ? "" : "s") to hit your goal.")
+                    }
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)

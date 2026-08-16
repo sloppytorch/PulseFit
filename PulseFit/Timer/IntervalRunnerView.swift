@@ -127,7 +127,7 @@ final class TimerSession: ObservableObject {
 
     // MARK: - Internals
 
-    private func setElapsed(_ value: TimeInterval) {
+    private func setElapsed(to value: TimeInterval) {
         accumulated = min(max(0, value), engine.totalDuration)
         startDate = isRunning ? Date() : nil
         lastPhaseIndex = -1
