@@ -24,7 +24,6 @@ jobs:
           echo "archive files: $(tar -tzf project.tgz | wc -l | tr -d ' ')"
 
       - name: Run unit tests
-        continue-on-error: true
         run: |
           set -eo pipefail
           DEVICE="$(xcrun simctl list devices available | grep -E -o 'iPhone [0-9][^()]*' | head -n1 | xargs echo)"
