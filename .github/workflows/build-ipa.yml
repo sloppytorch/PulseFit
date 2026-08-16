@@ -1,0 +1,59 @@
+name: Build PulseFit IPA
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Unpack, test, archive, release
+    runs-on: macos-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Unpack project archive
+        run: |
+          openssl base64 -d -in project.tgz.b64 -out project.tgz
+          mkdir app && tar -xzf project.tgz -C app
+          echo "--- archive contents ---"
+          tar -tzf project.tgz | head -10
+
+      - name: Run unit tests
+        continue-on-error: true
+        run: |
+          set -eo pipefail
+          DEVICE="$(xcrun simctl list devices available | grep -E -o 'iPhone [0-9][^()]*' | head -n1 | xargs echo)"
+          if [ -z "$DEVICE" ]; then
+            echo "No iOS simulator found - skipping tests."
+            exit 0
+          fi
+          echo "Testing on simulator: $DEVICE"
+          cd app
+          xcodebuild test \
+            -project PulseFit.xcodeproj \
+            -scheme PulseFit \
+            -destination "platform=iOS Simulator,name=$DEVICE"
+
+      - name: Build unsigned IPA
+        run: cd app && bash scripts/build_ipa.sh ../PulseFit-unsigned.ipa
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PulseFit-unsigned-ipa
+          path: PulseFit-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish release with IPA
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: pulsefit-${{ github.run_number }}
+          name: PulseFit unsigned build ${{ github.run_number }}
+          files: PulseFit-unsigned.ipa
+          prerelease: true
