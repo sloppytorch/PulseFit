@@ -29,7 +29,9 @@ final class TimerEngineTests: XCTestCase {
         XCTAssertEqual(phases.filter { $0.kind == .rest }.count, 4)
         XCTAssertEqual(phases.filter { $0.kind == .setRest }.count, 1)
         let total = phases.reduce(0.0) { $0 + $1.duration }
-        XCTAssertEqual(total, 10 + 2 * (3 * 30 + 2 * 15) + 60 + 30, accuracy: 0.001)
+        // 10 prepare + 2 x (3x30 work + 2x15 rest) + 60 set rest + 30 cool down
+        let expected: Double = 340
+        XCTAssertEqual(total, expected, accuracy: 0.001)
     }
 
     func testZeroDurationsAreDropped() {
