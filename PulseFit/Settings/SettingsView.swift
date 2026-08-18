@@ -10,11 +10,7 @@ struct SettingsView: View {
     @AppStorage(SettingsKeys.voiceEnabled) private var voiceEnabled = false
     @AppStorage(SettingsKeys.hapticsEnabled) private var hapticsEnabled = true
     @AppStorage(SettingsKeys.backgroundTimer) private var backgroundTimer = true
-    @AppStorage(SettingsKeys.phaseAlerts) private var phaseAlerts = true {
-        willSet {
-            if newValue { TimerSession.requestAuthorization() }
-        }
-    }
+    @AppStorage(SettingsKeys.phaseAlerts) private var phaseAlerts = true
     @AppStorage(SettingsKeys.weeklyGoal) private var weeklyGoal = 4
 
     @State private var exportURL: URL?
@@ -110,6 +106,9 @@ struct SettingsView: View {
                     workoutStore.deleteAll()
                 }
                 Button("Cancel", role: .cancel) {}
+            }
+            .onChange(of: phaseAlerts) { newValue in
+                if newValue { TimerSession.requestAuthorization() }
             }
         }
     }

@@ -271,7 +271,7 @@ struct TypeBreakdownCard: View {
             Text("By Workout Type")
                 .font(.headline)
             let maxCount = max(breakdown.map(\.count).max() ?? 1, 1)
-            ForEach(Array(breakdown.enumerated()), id: \.element.type) { index, item in
+            ForEach(Array(breakdown.enumerated()), id: \.offset) { index, item in
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(spacing: 6) {
                         Circle()
@@ -285,12 +285,13 @@ struct TypeBreakdownCard: View {
                             .foregroundColor(.secondary)
                     }
                     GeometryReader { geo in
+                        let availableWidth = max(0, geo.size.width)
                         ZStack(alignment: .leading) {
                             Capsule()
                                 .fill(Color.primary.opacity(0.06))
                             Capsule()
                                 .fill(Theme.paletteColor(index))
-                                .frame(width: geo.size.width * CGFloat(item.count) / CGFloat(maxCount))
+                                .frame(width: availableWidth * CGFloat(item.count) / CGFloat(maxCount))
                         }
                     }
                     .frame(height: 6)

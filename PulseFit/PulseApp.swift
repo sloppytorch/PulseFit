@@ -2,33 +2,15 @@ import SwiftUI
 import UserNotifications
 import UIKit
 
-@main
-struct PulseFitApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+final class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
+    static let shared = NotificationDelegate()
 
-    @StateObject private var workoutStore = WorkoutStore()
-    @StateObject private var templateStore = TemplateStore()
-
-    var body: some Scene {
-        WindowGroup {
-            RootTabView()
-                .environmentObject(workoutStore)
-                .environmentObject(templateStore)
-        }
-    }
-}
-
-final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
-    ) -> Bool {
+    override init() {
+        super.init()
         UNUserNotificationCenter.current().delegate = self
-        return true
     }
 
-    /// Suppress notification banners while the app is actively showing its own
-    /// cues; show them when backgrounded / locked.
+    /// Show notification banner and sound when the app is backgrounded or locked.
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
@@ -38,6 +20,24 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
             completionHandler([])
         } else {
             completionHandler([.banner, .sound])
+        }
+    }
+}
+
+@main
+struct PulseFitApp: App {
+    @StateObject private var workoutStore = WorkoutStore()
+    @StateObject private var templateStore = TemplateStore()
+
+    init() {
+        _ = NotificationDelegate.shared
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            RootTabView()
+                .environmentObject(workoutStore)
+                .environmentObject(templateStore)
         }
     }
 }

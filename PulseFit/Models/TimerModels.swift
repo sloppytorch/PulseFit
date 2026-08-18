@@ -143,7 +143,7 @@ struct TimerTemplate: Codable, Identifiable, Hashable {
 
 /// A fully expanded, timed step the engine walks through.
 struct Phase: Identifiable, Hashable {
-    let id: UUID
+    var id: String
     var name: String
     var kind: PhaseKind
     var duration: Double
@@ -160,12 +160,12 @@ enum TemplateExpander {
             guard let c = template.config else { return [] }
             return phases(for: c)
         case .segments:
-            return (template.segments ?? []).map {
+            return (template.segments ?? []).enumerated().map { index, segment in
                 Phase(
-                    id: $0.id,
-                    name: $0.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? $0.kind.defaultName : $0.name,
-                    kind: $0.kind,
-                    duration: max(1, $0.durationSeconds),
+                    id: "segment-\(index)-\(segment.id.uuidString)",
+                    name: segment.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? segment.kind.defaultName : segment.name,
+                    kind: segment.kind,
+                    duration: max(1, segment.durationSeconds),
                     setNumber: nil,
                     roundNumber: nil,
                     totalSets: 0,
@@ -182,9 +182,10 @@ enum TemplateExpander {
 
         func append(_ kind: PhaseKind, _ seconds: Double, set: Int?, round: Int?) {
             guard seconds > 0 else { return }
+            let id = "classic-\(result.count)-\(kind.rawValue)-\(set ?? 0)-\(round ?? 0)"
             result.append(
                 Phase(
-                    id: UUID(),
+                    id: id,
                     name: kind.defaultName,
                     kind: kind,
                     duration: seconds,

@@ -4,10 +4,10 @@ import XCTest
 final class TimerEngineTests: XCTestCase {
     private func simplePhases() -> [Phase] {
         [
-            Phase(id: UUID(), name: "Get Ready", kind: .prepare, duration: 10, setNumber: nil, roundNumber: nil, totalSets: 0, totalRounds: 0),
-            Phase(id: UUID(), name: "Work", kind: .work, duration: 30, setNumber: 1, roundNumber: 1, totalSets: 1, totalRounds: 2),
-            Phase(id: UUID(), name: "Rest", kind: .rest, duration: 15, setNumber: 1, roundNumber: 1, totalSets: 1, totalRounds: 2),
-            Phase(id: UUID(), name: "Work", kind: .work, duration: 30, setNumber: 1, roundNumber: 2, totalSets: 1, totalRounds: 2)
+            Phase(id: "test-0", name: "Get Ready", kind: .prepare, duration: 10, setNumber: nil, roundNumber: nil, totalSets: 0, totalRounds: 0),
+            Phase(id: "test-1", name: "Work", kind: .work, duration: 30, setNumber: 1, roundNumber: 1, totalSets: 1, totalRounds: 2),
+            Phase(id: "test-2", name: "Rest", kind: .rest, duration: 15, setNumber: 1, roundNumber: 1, totalSets: 1, totalRounds: 2),
+            Phase(id: "test-3", name: "Work", kind: .work, duration: 30, setNumber: 1, roundNumber: 2, totalSets: 1, totalRounds: 2)
         ]
     }
 

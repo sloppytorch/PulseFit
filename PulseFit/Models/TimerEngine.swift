@@ -59,7 +59,7 @@ struct TimerEngine: Equatable {
 
         guard !phases.isEmpty, t < total else {
             let last = phases.last ?? Phase(
-                id: UUID(), name: "Done", kind: .cooldown, duration: 0,
+                id: "done", name: "Done", kind: .cooldown, duration: 0,
                 setNumber: nil, roundNumber: nil, totalSets: 0, totalRounds: 0
             )
             return EngineState(

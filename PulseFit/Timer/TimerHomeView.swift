@@ -125,11 +125,12 @@ struct PhaseTimelineView: View {
 
     var body: some View {
         GeometryReader { geo in
+            let availableWidth = max(0, geo.size.width)
             HStack(spacing: 1) {
                 ForEach(Array(phases.prefix(80))) { phase in
                     Capsule()
                         .fill(Theme.color(for: phase.kind).opacity(0.9))
-                        .frame(width: max(1.5, geo.size.width * CGFloat(phase.duration / total) - 1))
+                        .frame(width: max(1.5, availableWidth * CGFloat(phase.duration / total) - 1))
                 }
             }
             .clipShape(Capsule())
