@@ -22,6 +22,12 @@ enum Stats {
         var longestStreak: Int
     }
 
+    struct DayActivity: Identifiable, Equatable {
+        var id: Date { day }
+        var day: Date
+        var minutes: Double
+    }
+
     // MARK: - Streaks
 
     static func currentStreak(_ workouts: [Workout], now: Date = Date(), calendar: Calendar = .current) -> Int {
@@ -126,14 +132,14 @@ enum Stats {
     }
 
     /// Daily minutes for the trailing `days` days, oldest first.
-    static func dailyMinutes(_ workouts: [Workout], days: Int, now: Date = Date(), calendar: Calendar = .current) -> [(day: Date, minutes: Double)] {
+    static func dailyMinutes(_ workouts: [Workout], days: Int, now: Date = Date(), calendar: Calendar = .current) -> [DayActivity] {
         let byDay = Dictionary(grouping: workouts) { calendar.startOfDay(for: $0.date) }
             .mapValues { $0.reduce(0.0) { $0 + $1.durationMinutes } }
         let today = calendar.startOfDay(for: now)
-        var result: [(Date, Double)] = []
+        var result: [DayActivity] = []
         for offset in stride(from: days - 1, through: 0, by: -1) {
             guard let day = calendar.date(byAdding: .day, value: -offset, to: today) else { continue }
-            result.append((day, byDay[day] ?? 0))
+            result.append(DayActivity(day: day, minutes: byDay[day] ?? 0))
         }
         return result
     }

@@ -5,7 +5,7 @@ struct StatsView: View {
     @AppStorage(SettingsKeys.weeklyGoal) private var weeklyGoal = 4
 
     @State private var selectedWeek: Stats.WeekTotal?
-    @State private var selectedDay: (day: Date, minutes: Double)?
+    @State private var selectedDay: Stats.DayActivity?
 
     private let units = SettingsKeys.currentUnits
 
@@ -203,8 +203,8 @@ struct WeeklyBarChartCard: View {
 // MARK: - Activity heatmap (GitHub style)
 
 struct HeatmapCard: View {
-    let days: [(day: Date, minutes: Double)]
-    @Binding var selection: (day: Date, minutes: Double)?
+    let days: [Stats.DayActivity]
+    @Binding var selection: Stats.DayActivity?
 
     private func opacity(for minutes: Double) -> Double {
         switch minutes {
@@ -216,7 +216,7 @@ struct HeatmapCard: View {
         }
     }
 
-    private var columns: [[(day: Date, minutes: Double)]] {
+    private var columns: [[Stats.DayActivity]] {
         stride(from: 0, to: days.count, by: 7).map {
             Array(days[$0..<min($0 + 7, days.count)])
         }
@@ -235,7 +235,7 @@ struct HeatmapCard: View {
             HStack(spacing: 3) {
                 ForEach(Array(columns.enumerated()), id: \.offset) { _, column in
                     VStack(spacing: 3) {
-                        ForEach(column, id: \.day) { entry in
+                        ForEach(column) { entry in
                             RoundedRectangle(cornerRadius: 3)
                                 .fill(entry.minutes > 0
                                     ? Theme.accent.opacity(opacity(for: entry.minutes))

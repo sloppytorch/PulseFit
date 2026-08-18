@@ -126,7 +126,7 @@ struct PhaseTimelineView: View {
     var body: some View {
         GeometryReader { geo in
             HStack(spacing: 1) {
-                ForEach(phases.prefix(80)) { phase in
+                ForEach(Array(phases.prefix(80))) { phase in
                     Capsule()
                         .fill(Theme.color(for: phase.kind).opacity(0.9))
                         .frame(width: max(1.5, geo.size.width * CGFloat(phase.duration / total) - 1))
