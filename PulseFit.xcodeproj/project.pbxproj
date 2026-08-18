@@ -215,7 +215,7 @@
 		};
 		BB0000000000000000000002 /* PulseFitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD0000000000000000000000003 /* Build configuration list for PBXNativeTarget "PulseFitTests" */;
+			buildConfigurationList = BD0000000000000000000003 /* Build configuration list for PBXNativeTarget "PulseFitTests" */;
 			buildPhases = (
 				BA0000000000000000000004 /* Sources */,
 				BA0000000000000000000005 /* Frameworks */,
