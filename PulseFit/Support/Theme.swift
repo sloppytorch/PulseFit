@@ -41,9 +41,15 @@ enum SettingsKeys {
     static let phaseAlerts = "settings.phaseAlerts"
     static let weeklyGoal = "settings.weeklyGoal"
 
-    /// `@AppStorage`-style reads where "never set" must default to true.
+    /// `@AppStorage`-style reads where "never set" defaults to true (except voice prompts).
     static func defaultedBool(_ key: Key) -> Bool {
-        UserDefaults.standard.object(forKey: key.rawValue) == nil ? true : UserDefaults.standard.bool(forKey: key.rawValue)
+        if let val = UserDefaults.standard.object(forKey: key.rawValue) as? Bool {
+            return val
+        }
+        if key == .voiceEnabled {
+            return false
+        }
+        return true
     }
 
     static var currentUnits: Units {

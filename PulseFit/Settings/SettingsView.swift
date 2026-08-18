@@ -7,7 +7,7 @@ struct SettingsView: View {
 
     @AppStorage(SettingsKeys.units) private var units: Units = .metric
     @AppStorage(SettingsKeys.soundEnabled) private var soundEnabled = true
-    @AppStorage(SettingsKeys.voiceEnabled) private var voiceEnabled = true
+    @AppStorage(SettingsKeys.voiceEnabled) private var voiceEnabled = false
     @AppStorage(SettingsKeys.hapticsEnabled) private var hapticsEnabled = true
     @AppStorage(SettingsKeys.backgroundTimer) private var backgroundTimer = true
     @AppStorage(SettingsKeys.phaseAlerts) private var phaseAlerts = true {

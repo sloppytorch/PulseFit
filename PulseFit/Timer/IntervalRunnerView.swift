@@ -118,9 +118,6 @@ final class TimerSession: ObservableObject {
         }
         let secondRemaining = Int(next.remainingInPhase.rounded(.up))
         if secondRemaining != lastSecondRemaining {
-            if (1...3).contains(secondRemaining) {
-                SoundPlayer.shared.tick()
-            }
             lastSecondRemaining = secondRemaining
         }
     }

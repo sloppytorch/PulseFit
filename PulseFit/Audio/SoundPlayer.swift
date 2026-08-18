@@ -19,7 +19,8 @@ final class SoundPlayer {
     var voiceEnabled: Bool { SettingsKeys.defaultedBool(.voiceEnabled) }
 
     /// Activates the playback session (so cues are audible even with the mute
-    /// switch on) and pre-rolls every cue buffer.
+    /// switch on) and pre-rolls every cue buffer. Configured with .mixWithOthers
+    /// so it never interrupts or pauses background audio (e.g. Spotify).
     func prepare() {
         guard !prepared else { return }
         prepared = true
@@ -31,6 +32,7 @@ final class SoundPlayer {
         }
         for cue in Cue.allCases {
             if let player = try? AVAudioPlayer(data: Self.wavData(for: cue)) {
+                player.volume = 1.0
                 player.prepareToPlay()
                 players[cue] = player
             }
@@ -99,8 +101,8 @@ final class SoundPlayer {
             let count = Int(Double(sampleRate) * seconds)
             let gapCount = Int(Double(sampleRate) * gap)
             var out = [Float](repeating: 0, count: count + gapCount)
-            let attack = 0.008
-            let release = min(0.06, seconds * 0.4)
+            let attack = 0.005
+            let release = min(0.02, seconds * 0.1)
             for i in 0..<count {
                 let t = Double(i) / Double(sampleRate)
                 var envelope = 1.0
@@ -109,20 +111,20 @@ final class SoundPlayer {
                 } else if t > seconds - release {
                     envelope = (seconds - t) / release
                 }
-                out[i] = Float(sin(2.0 * Double.pi * freq * t) * 0.9 * envelope)
+                out[i] = Float(sin(2.0 * Double.pi * freq * t) * 1.0 * envelope)
             }
             return out
         }
 
         switch cue {
-        case .tick: return tone(1318, 0.07)
-        case .prepare: return tone(660, 0.12)
-        case .work: return tone(880, 0.2)
-        case .rest: return tone(494, 0.2)
-        case .setRest: return tone(587, 0.18)
-        case .cooldown: return tone(523, 0.25)
-        case .custom: return tone(784, 0.15)
-        case .finish: return tone(880, 0.15, gap: 0.07) + tone(880, 0.05, gap: 0.07) + tone(1175, 0.3)
+        case .tick: return tone(1046, 0.08)
+        case .prepare: return tone(1046, 0.22)
+        case .work: return tone(1046, 0.22)
+        case .rest: return tone(1046, 0.22)
+        case .setRest: return tone(1046, 0.22)
+        case .cooldown: return tone(1046, 0.22)
+        case .custom: return tone(1046, 0.22)
+        case .finish: return tone(1046, 0.45) // Single loud beep when clock runs out
         }
     }
 

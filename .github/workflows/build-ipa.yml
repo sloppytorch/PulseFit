@@ -28,9 +28,7 @@ jobs:
           xcodebuild test \
             -project PulseFit.xcodeproj \
             -scheme PulseFit \
-            -destination "platform=iOS Simulator,name=$DEVICE" \
-            SWIFT_VERSION=5.0 \
-            GENERATE_INFOPLIST_FILE=YES
+            -destination "platform=iOS Simulator,name=$DEVICE"
 
       - name: Build unsigned IPA
         run: bash scripts/build_ipa.sh PulseFit-unsigned.ipa
