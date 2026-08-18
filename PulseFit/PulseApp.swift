@@ -5,11 +5,6 @@ import UIKit
 final class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     static let shared = NotificationDelegate()
 
-    override init() {
-        super.init()
-        UNUserNotificationCenter.current().delegate = self
-    }
-
     /// Show notification banner and sound when the app is backgrounded or locked.
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
@@ -29,15 +24,14 @@ struct PulseFitApp: App {
     @StateObject private var workoutStore = WorkoutStore()
     @StateObject private var templateStore = TemplateStore()
 
-    init() {
-        _ = NotificationDelegate.shared
-    }
-
     var body: some Scene {
         WindowGroup {
             RootTabView()
                 .environmentObject(workoutStore)
                 .environmentObject(templateStore)
+                .onAppear {
+                    UNUserNotificationCenter.current().delegate = NotificationDelegate.shared
+                }
         }
     }
 }

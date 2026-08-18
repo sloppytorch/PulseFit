@@ -10,7 +10,14 @@ final class WorkoutStore: ObservableObject {
     let storageURL: URL
 
     init(storageDirectory: URL? = nil) {
-        let dir = storageDirectory ?? FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let dir: URL
+        if let custom = storageDirectory {
+            dir = custom
+        } else if let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            dir = docs
+        } else {
+            dir = FileManager.default.temporaryDirectory
+        }
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         storageURL = dir.appendingPathComponent("workouts.json")
         workouts = Self.load(from: storageURL)
