@@ -336,7 +336,7 @@
 /* Begin PBXTargetDependency section */
 		BF0000000000000000000002 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BB0000000000000000000002 /* PulseFitTests */;
+			target = BB0000000000000000000001 /* PulseFit */;
 			targetProxy = BF0000000000000000000001 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -511,6 +511,7 @@
 		BE0000000000000000000005 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -529,12 +530,14 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseFit.app/PulseFit";
+				TEST_TARGET_NAME = PulseFit;
 			};
 			name = Debug;
 		};
 		BE0000000000000000000006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -553,6 +556,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseFit.app/PulseFit";
+				TEST_TARGET_NAME = PulseFit;
 			};
 			name = Release;
 		};
